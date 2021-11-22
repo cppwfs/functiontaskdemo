@@ -1,0 +1,19 @@
+= Spring Cloud Task that uses SC Functions
+
+The purpose of this demo is to show how a user can utilize functions in a Spring Cloud Task.
+It demonstrates the 2 methods of declaring a function:
+
+* Local Function Bean
+* Simple Jar containing a function
+
+== Build the application
+```
+cd functiontaskdemo
+mvn clean package
+```
+
+
+== Launch the application
+```
+java -jar target/functaskdemo-0.0.1-SNAPSHOT.jar --spring.cloud.function.location=<location of myuppercase project>/target/myuppercase-0.0.1-SNAPSHOT.jar --spring.cloud.function.function-class=io.spring.myuppercase.UpperCaseFunction
+```
